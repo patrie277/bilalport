@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom TEXT NOT NULL,
+    email TEXT NOT NULL,
+    sujet TEXT NOT NULL,
+    message TEXT NOT NULL,
+    date_envoi TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    email_envoye INTEGER NOT NULL DEFAULT 0 CHECK (email_envoye IN (0, 1))
+);
